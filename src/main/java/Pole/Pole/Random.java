@@ -2,8 +2,8 @@ package Pole.Pole;
 
 public class Random {
 	StoPrvkovePole stoPrvkovePole = new StoPrvkovePole();
-	int[] ranPole = stoPrvkovePole.pole;
-	Random random = new Random();
+	int[] ranPole = stoPrvkovePole.Pole();
+	java.util.Random random = new java.util.Random();
 
 	public int[] randomPole() {
 		for (int i = 0; i < ranPole.length; i++) {
@@ -23,8 +23,4 @@ public class Random {
 		this.ranPole = ranPole;
 	}
 
-	private int nextInt(int length) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
