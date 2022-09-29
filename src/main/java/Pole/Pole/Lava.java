@@ -21,11 +21,5 @@ public class Lava {
 		
 	}
 
-	public int[] getLava() {
-		return lava;
-	}
 
-	public void setLava(int[] lava) {
-		this.lava = lava;
-	}
 }

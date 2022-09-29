@@ -12,13 +12,7 @@ public class StoPrvkovePole {
 		return pole;
 	}
 
-	public int[] getPole() {
-		return pole;
-	}
-
-	public void setPole(int[] pole) {
-		this.pole = pole;
-	}
+	
 
 	
 

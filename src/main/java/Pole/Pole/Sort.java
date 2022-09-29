@@ -2,18 +2,19 @@ package Pole.Pole;
 
 public class Sort {
 	StoPrvkovePole stoPrvkovePole = new StoPrvkovePole();
-	Random random =  new Random();
-	int[] pole = random.randomPole();
+	
+	int[] pole = stoPrvkovePole.Pole();
 	
 	
 	public int[] Sort() {
+		Integer[] p = new Integer[pole.length];
 		int n = pole.length;
 		 for (int i = 0; i < n - 1; i++) {
 	            for (int j = 0; j < n - i - 1; j++) {
-				if (pole[j] >pole[i+1]) {
-					int d = pole[j];
-					pole[j] = pole[i];
-					pole[i] = d;
+	            	if (p[j].compareTo(p[i]) < 0) {
+					int d = p[j];
+					p[j] = p[i];
+					p[i] = d;
 					
 				}
 

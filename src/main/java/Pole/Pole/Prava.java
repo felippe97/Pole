@@ -18,10 +18,4 @@ public class Prava {
 		}
 		return lava;
 	}
-	public int[] getPrava() {
-		return prava;
-	}
-	public void setPrava(int[] prava) {
-		this.prava = prava;
-	}
 }

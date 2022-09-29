@@ -15,12 +15,5 @@ public class Random {
 		return ranPole;
 	}
 
-	public int[] getRanPole() {
-		return ranPole;
-	}
-
-	public void setRanPole(int[] ranPole) {
-		this.ranPole = ranPole;
-	}
-
+	
 }
