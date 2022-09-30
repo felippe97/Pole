@@ -1,33 +1,12 @@
 package sk.filip.pole;
 
 public class Pole {
-	int e;
-	String s;
+	public int[] pole() {
+		int[] num = new int[10];
 
-	public Pole(int e, String s) {
-		this.e = e;
-		this.s = s;
+		for (int i = 0; i < num.length; i++) {
+			num[i] = i;
+		}
+		return num;
 	}
-
-	public String getS() {
-		return s;
-	}
-
-	public void setS(String s) {
-		this.s = s;
-	}
-
-	public int getE() {
-		return e;
-	}
-
-	public void setE(int e) {
-		this.e = e;
-	}
-
-	@Override
-	public String toString() {
-		return "Pole [e=" + e + "s=" + s + "]";
-	}
-
 }
