@@ -6,7 +6,7 @@ import java.util.Random;
 public class main {
 
 	public static void main(String[] args) {
-		int[] num = new int[10];
+		int[] num = new int[100];
 
 		for (int i = 0; i < num.length; i++) {
 			num[i] = i;
@@ -20,12 +20,14 @@ public class main {
 			num[i] = temp;
 
 		}
-		BubleSortBack bubleSortBack = new  BubleSortBack();
+		IsSorted isSorted = new IsSorted();
+		BubleSortBack bubleSortBack = new BubleSortBack();
 		bubleSortBack.sort(num);
-		System.out.println( Arrays.toString(num));
+		System.out.println(Arrays.toString(num));
+		System.out.println(isSorted.isBackSorted(num));
 		BubleSort bubleSort = new BubleSort();
 		bubleSort.sort(num);
-		System.out.println(  Arrays.toString(num));
- 
+		System.out.println(Arrays.toString(num));
+		System.out.println(isSorted.isSorted(num));
 	}
 }

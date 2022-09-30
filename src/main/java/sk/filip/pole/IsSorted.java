@@ -1,18 +1,18 @@
 package sk.filip.pole;
 
 public class IsSorted {
-	public static boolean isSorted(int[] input) {
-		
-		
-	    return isSorted(input) ;
-	}
-	public static boolean isSorted(int[] input, int index) {
-	    if (index < 2) {
-	        return true;
-	    } else if (input.length.compareTo(input.length) > 0) {
-	        return false;
-	    } else {
-	        return isSorted(input, index - 1);
+	boolean isSorted(int[] array) {
+	    for (int i = 0; i < array.length - 1; i++) {
+	        if (array[i] > array[i + 1])
+	            return false;
 	    }
-}
+	    return true;
+	}
+	boolean isBackSorted(int[] array) {
+	    for (int i = 0; i < array.length - 1; i++) {
+	        if (array[i] < array[i + 1])
+	            return false;
+	    }
+	    return true;
+	}
 }
