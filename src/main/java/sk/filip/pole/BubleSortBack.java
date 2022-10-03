@@ -1,6 +1,6 @@
 package sk.filip.pole;
 
-public class BubleSortBack implements Sort{
+public class BubleSortBack implements SortBack{
 
 	public int[] sort(int[] input) {
 		
