@@ -9,10 +9,9 @@ public class SortTest {
 		SortTest test = new SortTest();
 		test.sortTest(new BubleSort(), 10);
 		test.sortTest(new InsertSort(), 10);
-		 System.out.println();
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
-		
+
 	}
 
 	/*
@@ -42,7 +41,7 @@ public class SortTest {
 
 	int[] generateRandomArray(int size) {
 		Random random = new Random();
-		int n = 10;
+		int n = size;
 		int[] result = new int[n];
 		for (int i = 0; i < n; i++) {
 			result[i] = random.nextInt(n);
@@ -53,7 +52,7 @@ public class SortTest {
 
 	int[] generateAscArray(int size) {
 		Random random = new Random();
-		int n = 100;
+		int n = size;
 		int[] num = new int[n];
 		for (int i = 0; i < num.length; i++) {
 			int r = random.nextInt(num.length);
@@ -63,12 +62,12 @@ public class SortTest {
 			size = num[i];
 		}
 		return new int[size];
-		
+
 	}
 
 	int[] generateDescArray(int size) {
 		Random random = new Random();
-		int n = 100;
+		int n = size;
 		int[] num = new int[n];
 		for (int i = 0; i < num.length; i++) {
 			int r = random.nextInt(num.length);
