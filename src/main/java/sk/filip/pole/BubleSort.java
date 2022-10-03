@@ -19,7 +19,7 @@ public class BubleSort implements Sort {
 		return input;
 	}
 
-	public int[] sort1(int[] input) {
+	public int[] sort1(int[] input){
 		int n = input.length;
 		int temp = 0;
 		for (int i = 0; i < n; i++) {

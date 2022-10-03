@@ -2,36 +2,19 @@ package sk.filip.pole;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SortTest {
 
 	public static void main(String[] args) {
+
 		SortTest test = new SortTest();
 		test.sortTest(new BubleSort(), 10);
 		test.sortTest(new InsertSort(), 10);
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
-
 	}
-
-	/*
-	 * public static void oldmain(String[] args) {
-	 * 
-	 * int[] num = new int[100];
-	 * 
-	 * for (int i = 0; i < num.length; i++) { num[i] = i + 1; } Random rand = new
-	 * Random(); for (int i = 0; i < num.length; i++) { int r =
-	 * rand.nextInt(num.length); int temp = num[r]; num[r] = num[i]; num[i] = temp;
-	 * 
-	 * } IsSorted isSorted = new IsSorted(); BubleSortBack bubleSortBack = new
-	 * BubleSortBack(); bubleSortBack.sort(num);
-	 * System.out.println(Arrays.toString(num));
-	 * 
-	 * BubleSort bubleSort = new BubleSort(); bubleSort.sort(num);
-	 * System.out.println(Arrays.toString(num));
-	 * 
-	 * }
-	 */
 
 	void sortTest(Sort sort, int size) {
 		isSorted(sort.sort(generateRandomArray(size)));
@@ -48,6 +31,7 @@ public class SortTest {
 			size = result[i];
 		}
 		return new int[size];
+
 	}
 
 	int[] generateAscArray(int size) {
