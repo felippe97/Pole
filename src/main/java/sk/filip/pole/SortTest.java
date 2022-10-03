@@ -2,8 +2,6 @@ package sk.filip.pole;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.logging.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SortTest {
 
@@ -11,9 +9,10 @@ public class SortTest {
 
 		SortTest test = new SortTest();
 		test.sortTest(new BubleSort(), 10);
-		test.sortTest(new InsertSort(), 10);
+		test.sortTest(new InsertSort(), 10);	
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
+		System.out.println(Arrays.toString(test.generateRandomArray(10)));
 	}
 
 	void sortTest(Sort sort, int size) {
