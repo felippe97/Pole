@@ -9,6 +9,7 @@ public class SortTest {
 		SortTest test = new SortTest();
 		test.sortTest(new BubleSort(), 10);
 		test.sortTest(new InsertSort(), 10);
+		 System.out.println();
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
 		
