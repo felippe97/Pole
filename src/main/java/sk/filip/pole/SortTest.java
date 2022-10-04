@@ -1,6 +1,5 @@
 package sk.filip.pole;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class SortTest {
@@ -8,26 +7,39 @@ public class SortTest {
 	public static void main(String[] args) {
 
 		SortTest test = new SortTest();
-		test.sortTest(new BubleSort(), 10);
-		test.sortTest(new InsertSort(), 10);	
+		System.out.println("Buble sort test");
+		boolean result = test.sortTest(new BubleSort(), 10);
+		System.out.println("    ... " + (result ? "OK" : "NOT OK"));
+
+		System.out.println("Insert sort test");
+		result = test.sortTest(new InsertSort(), 10);
+		System.out.println("    ... " + (result ? "OK" : "NOT OK"));
+
+		System.out.println("Unsort test");
+		result = test.sortTest(new UnsortSort(), 10);
+		System.out.println("    ... " + (result ? "OK" : "NOT OK"));
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
-		System.out.println(Arrays.toString(test.generateRandomArray(10)));
 	}
 
-	void sortTest(Sort sort, int size) {
-		isSorted(sort.sort(generateRandomArray(size)));
-		isSorted(sort.sort(generateAscArray(size)));
-		isSorted(sort.sort(generateDescArray(size)));
+	boolean sortTest(Sort sort, int size) {
+		boolean result = isSorted(sort.sort(generateRandomArray(size)));
+		result = result && isSorted(sort.sort(generateAscArray(size)));
+		result = result && isSorted(sort.sort(generateDescArray(size)));
+		return result;
 	}
 
 	int[] generateRandomArray(int size) {
 		Random random = new Random();
+		/*
+		 * int n = size; int[] result = new int[n]; for (int i = 0; i < n; i++) {
+		 * result[i] = random.nextInt(n); size = result[i]; }
+		 */
 		int n = size;
 		int[] result = new int[n];
-		for (int i = 0; i < n; i++) {
-			result[i] = random.nextInt(n);
-			size = result[i];
+		for (int i = 0; i < result.length; i++) {
+			int r = random.nextInt(n) + 1;
+			size = r;
 		}
 		return new int[size];
 
@@ -80,9 +92,9 @@ public class SortTest {
 	boolean isBackSorted(int[] array) {
 		for (int i = 0; i < array.length - 1; i++) {
 			if (array[i] < array[i + 1])
-				return false;
+				return true;
 		}
-		return true;
+		return false;
 	}
 
 }
