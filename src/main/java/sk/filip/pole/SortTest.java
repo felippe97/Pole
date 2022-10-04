@@ -1,5 +1,6 @@
 package sk.filip.pole;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SortTest {
@@ -18,12 +19,14 @@ public class SortTest {
 		System.out.println("Unsort test");
 		result = test.sortTest(new UnsortSort(), 10);
 		System.out.println("    ... " + (result ? "OK" : "NOT OK"));
+
 //		test.sortTest(new QuickSort(), 10);
 //		test.sortTest(new KukuSort(), 10);
 	}
 
 	boolean sortTest(Sort sort, int size) {
 		boolean result = isSorted(sort.sort(generateRandomArray(size)));
+
 		result = result && isSorted(sort.sort(generateAscArray(size)));
 		result = result && isSorted(sort.sort(generateDescArray(size)));
 		return result;
@@ -31,31 +34,27 @@ public class SortTest {
 
 	int[] generateRandomArray(int size) {
 		Random random = new Random();
-		/*
-		 * int n = size; int[] result = new int[n]; for (int i = 0; i < n; i++) {
-		 * result[i] = random.nextInt(n); size = result[i]; }
-		 */
-		int n = size;
-		int[] result = new int[n];
-		for (int i = 0; i < result.length; i++) {
-			int r = random.nextInt(n) + 1;
-			size = r;
-		}
-		return new int[size];
+		int[] ranPole = new int[size];
+		for (int i = 0; i < ranPole.length; i++) {
+			int r= random.nextInt(ranPole.length);
+			ranPole[r] = r;
 
+		}
+
+		System.out.println("generateRandomArray" +  Arrays.toString(ranPole));
+		return new int[size];
 	}
 
 	int[] generateAscArray(int size) {
 		Random random = new Random();
-		int n = size;
-		int[] num = new int[n];
-		for (int i = 0; i < num.length; i++) {
-			int r = random.nextInt(num.length);
-			int temp = num[r];
-			num[r] = num[i];
-			num[i] = temp;
-			size = num[i];
+		int[] ranPole = new int[size];
+		for (int i = 0; i < ranPole.length; i++) {
+			int r= random.nextInt(ranPole.length);
+			ranPole[r] = r;
+		
+			
 		}
+		System.out.println("generateAscArray" + Arrays.toString(ranPole));
 		return new int[size];
 
 	}
@@ -66,9 +65,7 @@ public class SortTest {
 		int[] num = new int[n];
 		for (int i = 0; i < num.length; i++) {
 			int r = random.nextInt(num.length);
-			int temp = num[r];
-			num[r] = num[i];
-			num[i] = temp;
+			
 		}
 		int n1 = num.length;
 
@@ -77,16 +74,21 @@ public class SortTest {
 			num[i] = num[n - i - 1];
 			num[n - i - 1] = temp;
 			size = num[i];
+
 		}
+		
+		System.out.println("generateDescArray" + size);
 		return new int[size];
 	}
 
 	boolean isSorted(int[] array) {
 		for (int i = 0; i < array.length - 1; i++) {
-			if (array[i] > array[i + 1])
-				return false;
+			if (array[i] < array[i + 1])
+				System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa" + true);
+			return true;
 		}
-		return true;
+		System.out.println("b" + false);
+		return false;
 	}
 
 	boolean isBackSorted(int[] array) {
