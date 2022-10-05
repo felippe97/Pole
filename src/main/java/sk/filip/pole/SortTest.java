@@ -1,6 +1,7 @@
 package sk.filip.pole;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class SortTest {
@@ -20,8 +21,6 @@ public class SortTest {
 		result = test.sortTest(new UnsortSort(), 10);
 		System.out.println("    ... " + (result ? "OK" : "NOT OK"));
 
-//		test.sortTest(new QuickSort(), 10);
-//		test.sortTest(new KukuSort(), 10);
 	}
 
 	boolean sortTest(Sort sort, int size) {
@@ -37,7 +36,6 @@ public class SortTest {
 		int[] ranPole = new int[size];
 		for (int i = 0; i < ranPole.length; i++) {
 			ranPole[i] = random.nextInt(ranPole.length);
-			
 
 		}
 
@@ -46,54 +44,57 @@ public class SortTest {
 	}
 
 	int[] generateAscArray(int size) {
-		
-		Random random = new Random();
-		int[] ranPole = new int[size];
-		for (int i = 0; i < ranPole.length; i++) {
-			ranPole[i] = random.nextInt(ranPole.length);;
-			
+		int[] num = new int[size];
+		for (int i = 0; i < num.length; i++) {
+			num[i] = i;
 
 		}
-		System.out.println("generateAscArray " + Arrays.toString(ranPole));
-		return ranPole;
+		System.out.println("generateAscArray " + Arrays.toString(num));
+		return num;
 
 	}
 
 	int[] generateDescArray(int size) {
-		Random random = new Random();
-		int[] ranPole = new int[size];
-		for (int i = 0; i < ranPole.length; i++) {
-			ranPole[i] = random.nextInt(ranPole.length);
+
+		int[] num = new int[size];
+		for (int i = 0; i < num.length; i++) {
+			num[i] = i;
 
 		}
+		int n = num.length;
 
-		for (int i = 0; i < size / 2; i++) {
-			int temp = ranPole[i];
-			ranPole[i] = ranPole[size - i - 1];
-			ranPole[size - i - 1] = temp;
+		int temp = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 1; j < (n - i); j++) {
+				if (num[j - 1] < num[j]) {
 
+					temp = num[j - 1];
+					num[j - 1] = num[j];
+					num[j] = temp;
+
+				}
+			}
 		}
+		System.out.println("generateDescArray " + Arrays.toString(num));
 
-		System.out.println("generateDescArray " + size);
-		return ranPole;
+		return num;
 	}
 
 	boolean isSorted(int[] array) {
-		for (int i = 0; i < array.length - 1; i++) {
-			if (array[i] < array[i + 1])
-				System.out.println(true);
-			return true;
-		}
-		System.out.println("b" + false);
-		return false;
-	}
+		 for (int i = 0; i < array.length - 1; i++)
+	        {
+	            if (array[i] > array[i + 1]) {
+	                return false;
+	            }
+	        }
+	 
+	        return true;
+	    }
 
-	boolean isBackSorted(int[] array) {
-		for (int i = 0; i < array.length - 1; i++) {
-			if (array[i] < array[i + 1])
-				return true;
-		}
-		return false;
-	}
+	/*
+	 * boolean isBackSorted(int[] array) { for (int i = 0; i < array.length - 1;
+	 * i++) { if (array[i] < array[i + 1]) System.out.println(true); return true; }
+	 * System.out.println(false); return false; }
+	 */
 
 }

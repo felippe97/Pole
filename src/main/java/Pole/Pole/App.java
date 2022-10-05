@@ -13,15 +13,12 @@ public class App {
 		System.out.println(Arrays.toString(ran));
 		System.out.println();
 		System.out.println();
-		Sort sort = new Sort();
-		int[] sL = sort.Sort();
-		System.out.println(Arrays.toString(sL));
-		System.out.println();
-		Lava lava = new Lava();
-		int[] la = lava.PolPole();
-		System.out.println(Arrays.toString(la));
-		Prava prava = new Prava();
-		int[] pr = prava.PolPole();
-		System.out.println(Arrays.toString(pr));
+		/*
+		 * Sort sort = new Sort(); int[] sL = sort.Sort();
+		 * System.out.println(Arrays.toString(sL)); System.out.println(); Lava lava =
+		 * new Lava(); int[] la = lava.PolPole();
+		 * System.out.println(Arrays.toString(la)); Prava prava = new Prava(); int[] pr
+		 * = prava.PolPole(); System.out.println(Arrays.toString(pr));
+		 */
 	}
 }
