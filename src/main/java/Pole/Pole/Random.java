@@ -1,5 +1,7 @@
 package Pole.Pole;
 
+import java.util.Arrays;
+
 public class Random {
 	StoPrvkovePole stoPrvkovePole = new StoPrvkovePole();
 	int[] ranPole = stoPrvkovePole.Pole();
@@ -7,11 +9,10 @@ public class Random {
 
 	public int[] randomPole() {
 		for (int i = 0; i < ranPole.length; i++) {
-			int r = random.nextInt(ranPole.length);
-			int d = ranPole[r];
-			ranPole[r] = ranPole[i];
-			ranPole[i] = d;
+			ranPole[i] = random.nextInt(ranPole.length);
+		
 		}
+		System.out.println(Arrays.toString(ranPole));
 		return ranPole;
 	}
 

@@ -36,55 +36,52 @@ public class SortTest {
 		Random random = new Random();
 		int[] ranPole = new int[size];
 		for (int i = 0; i < ranPole.length; i++) {
-			int r= random.nextInt(ranPole.length);
-			ranPole[r] = r;
+			ranPole[i] = random.nextInt(ranPole.length);
+			
 
 		}
 
-		System.out.println("generateRandomArray" +  Arrays.toString(ranPole));
-		return new int[size];
+		System.out.println("generateRandomArray " + Arrays.toString(ranPole));
+		return ranPole;
 	}
 
 	int[] generateAscArray(int size) {
+		
 		Random random = new Random();
 		int[] ranPole = new int[size];
 		for (int i = 0; i < ranPole.length; i++) {
-			int r= random.nextInt(ranPole.length);
-			ranPole[r] = r;
-		
+			ranPole[i] = random.nextInt(ranPole.length);;
 			
+
 		}
-		System.out.println("generateAscArray" + Arrays.toString(ranPole));
-		return new int[size];
+		System.out.println("generateAscArray " + Arrays.toString(ranPole));
+		return ranPole;
 
 	}
 
 	int[] generateDescArray(int size) {
 		Random random = new Random();
-		int n = size;
-		int[] num = new int[n];
-		for (int i = 0; i < num.length; i++) {
-			int r = random.nextInt(num.length);
-			
-		}
-		int n1 = num.length;
-
-		for (int i = 0; i < n1 / 2; i++) {
-			int temp = num[i];
-			num[i] = num[n - i - 1];
-			num[n - i - 1] = temp;
-			size = num[i];
+		int[] ranPole = new int[size];
+		for (int i = 0; i < ranPole.length; i++) {
+			ranPole[i] = random.nextInt(ranPole.length);
 
 		}
-		
-		System.out.println("generateDescArray" + size);
-		return new int[size];
+
+		for (int i = 0; i < size / 2; i++) {
+			int temp = ranPole[i];
+			ranPole[i] = ranPole[size - i - 1];
+			ranPole[size - i - 1] = temp;
+
+		}
+
+		System.out.println("generateDescArray " + size);
+		return ranPole;
 	}
 
 	boolean isSorted(int[] array) {
 		for (int i = 0; i < array.length - 1; i++) {
 			if (array[i] < array[i + 1])
-				System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa" + true);
+				System.out.println(true);
 			return true;
 		}
 		System.out.println("b" + false);
